@@ -30,7 +30,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2588321651416223142}
   m_Father: {fileID: 7136644666331948143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &4107712690020516558
@@ -195,6 +196,8 @@ MonoBehaviour:
   _GunTip: {fileID: 4776215453359755109}
   _Camera: {fileID: 9184297796723434280}
   _player: {fileID: 7032645784204108059}
+  _MaxDistance: 0
+  _GrappleForce: 35
 --- !u!1 &2303462267558947799
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +297,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3698631597136285942}
-  - {fileID: 2588321651416223142}
   m_Father: {fileID: 7968698098058941358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5395434585228994079
@@ -493,12 +495,12 @@ Transform:
   m_GameObject: {fileID: 8398610254996346258}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.20555505, y: -1.4481887, z: 7.8727927}
+  m_LocalPosition: {x: 0.20555496, y: -2.019189, z: 7.4007926}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2019449411923155025}
-  m_Father: {fileID: 7032645784204108059}
+  m_Father: {fileID: 9184297796723434280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8795662871581658151
 GameObject:
