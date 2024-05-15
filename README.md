@@ -1,2 +1,2 @@
 # Doomgeon
- Booomer Shooter game style
+ Boomer Shooter game style
