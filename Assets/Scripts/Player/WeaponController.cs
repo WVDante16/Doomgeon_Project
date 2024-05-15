@@ -10,7 +10,7 @@ public class WeaponController : MonoBehaviour
 
     [Header("Shoot Parameters")]
     public float _fireRange = 200f;
-    public float _recoilDistance = 0.2f;
+    public float _recoilForce = 0.2f;
     public float _recoilSpeed = 5f;
     public float _fireRate = 0.5f;
 
@@ -57,7 +57,7 @@ public class WeaponController : MonoBehaviour
     private IEnumerator Recoil()
     {
         // Desplazar el arma hacia atrás
-        transform.localPosition -= transform.forward * _recoilDistance;
+        transform.localPosition -= transform.forward * _recoilForce;
 
         // Esperar un momento
         yield return new WaitForSeconds(0.1f);
