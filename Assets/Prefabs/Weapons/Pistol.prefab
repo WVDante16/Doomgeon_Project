@@ -41,15 +41,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: cd7094d963107d546806595e8ca08bb2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.09
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd7094d963107d546806595e8ca08bb2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0032947809
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd7094d963107d546806595e8ca08bb2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.061
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd7094d963107d546806595e8ca08bb2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -120,10 +120,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hittableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   _bulletHolePrefab: {fileID: 1692846347646849921, guid: 669a20dc9fe0bc345a56ae0ded4f9b5a, type: 3}
   _fireRange: 200
-  _recoilDistance: 0.2
+  _recoilForce: 0.2
   _recoilSpeed: 5
   _fireRate: 0.5
 --- !u!114 &8692814437492717711
