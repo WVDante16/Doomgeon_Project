@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerWeaponController : MonoBehaviour
 {
+
+    public Player player;
+    public UIDisplay playerUI;
+    
     public List<GameObject> startingWeaponPrefabs = new List<GameObject>();
     public Transform weaponParentSocket;
     public Transform defaultWeaponPosition;
@@ -20,7 +24,7 @@ public class PlayerWeaponController : MonoBehaviour
         {
             AddWeapon(startingWeaponPrefab);
         }
-        SwitchWapon();
+        SwitchWeapon();
     }
 
     // Update is called once per frame
@@ -28,11 +32,11 @@ public class PlayerWeaponController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            SwitchWapon();
+            SwitchWeapon();
         }
     }
 
-    private void SwitchWapon()
+    private void SwitchWeapon()
     {
         int tempIndex = (activeWeaponIndex + 1) % weaponSlots.Length;
 
@@ -63,6 +67,8 @@ public class PlayerWeaponController : MonoBehaviour
                 WeaponController weaponClone = Instantiate(weaponPrefab, weaponParentSocket).GetComponent<WeaponController>(); 
                 weaponClone.gameObject.SetActive(false);
                 weaponSlots[i] = weaponClone;
+                weaponClone.player = this.player;
+                weaponClone.playerUI = this.playerUI;
                 break;
 
                 weaponSlots[i] = weaponClone;

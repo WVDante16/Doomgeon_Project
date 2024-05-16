@@ -17,7 +17,10 @@ public class SO_Weapon : ScriptableObject
     #region Stats
 
     [SerializeField] float damage;
+    [SerializeField] float fireRange;
+    [SerializeField] float fireRate;
     [SerializeField] int magazineCapacity; //Tamaño del cargador del arma
+    [SerializeField] int magazine;
     [SerializeField] int ammoTotal; //Numero total de municion
     [SerializeField] AmmoClass ammoType;
 
@@ -27,8 +30,11 @@ public class SO_Weapon : ScriptableObject
     public string Description { get { return description; } }
 
     public float Damage { get { return damage; } }
-    public int MagazineCapacity { get {  return magazineCapacity; } set { magazineCapacity = value; } }
-    public int AmmoTotal { get { return ammoTotal; }  set { ammoTotal = value; } }
+    public float FireRange { get { return fireRange; } }
+    public float FireRate { get { return fireRate; } }
+    public int MagazineCapacity { get { return magazineCapacity; } }
+    public int Magazine { get { return magazine; } set { magazine = value; } }
+    public int AmmoTotal { get { return ammoTotal; } set { ammoTotal = value; } }
     public AmmoClass AmmoType { get { return ammoType; } }
 
 }
