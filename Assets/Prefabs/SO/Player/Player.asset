@@ -20,4 +20,5 @@ MonoBehaviour:
   armor: 0
   weapons:
   - {fileID: 11400000, guid: 4b43fe5e7f1ab4449b162350d6223067, type: 2}
+  - {fileID: 11400000, guid: 883bff13053de604181a6e9ffd0e1f47, type: 2}
   damageUI: []
