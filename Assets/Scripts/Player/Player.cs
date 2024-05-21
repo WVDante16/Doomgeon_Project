@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 // Definición de la clase Player que hereda de MonoBehaviour
@@ -16,6 +17,9 @@ public class Player : MonoBehaviour
 
     // Referencia al arma que el jugador tiene en la mano
     public SO_Weapon WeaponInHand;
+
+    private float interactionRange = 2.5f; // Rango de interacción del jugador
+    private bool isInteracting = false; // Variable para rastrear si el jugador está interactuando con un objeto
 
     // Start se llama antes de la primera actualización del frame
     void Start()
@@ -34,7 +38,7 @@ public class Player : MonoBehaviour
     // Update se llama una vez por frame
     void Update()
     {
-        // Actualmente vacío, pero aquí se pueden agregar actualizaciones por frame si es necesario
+        PlayerRay();
     }
 
     // Método para que el jugador reciba daño
@@ -93,4 +97,36 @@ public class Player : MonoBehaviour
         // Destruye el objeto del jugador
         Destroy(gameObject);
     }
+
+
+    public void PlayerRay()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, interactionRange))
+        {
+            if (hit.collider.CompareTag("NPC") || hit.collider.CompareTag("Key") || hit.collider.CompareTag("DropWeapon"))
+            {
+                playerUI.textBox.text = $"Presiona [E] para interactuar";
+                playerUI.textBoxBG.SetActive(true);
+                isInteracting = true;  // El jugador está interactuando con un objeto
+            }
+            else
+            {
+                isInteracting = false;  // El raycast no golpeó un objeto interactivo
+            }
+        }
+        else
+        {
+            isInteracting = false;  // El raycast no golpeó nada
+        }
+
+        // Si el jugador no está interactuando, desactivar textBoxBG
+        if (!isInteracting)
+        {
+            playerUI.textBoxBG.SetActive(false);
+        }
+    }
+
 }
