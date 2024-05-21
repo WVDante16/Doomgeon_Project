@@ -279,6 +279,7 @@ GameObject:
   - component: {fileID: 146002526}
   - component: {fileID: 146002525}
   - component: {fileID: 146002524}
+  - component: {fileID: 146002527}
   m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
@@ -369,6 +370,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &146002527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146002522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1734e80764f907c43bc2e4303414d69e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 604849305}
 --- !u!1 &160304844
 GameObject:
   m_ObjectHideFlags: 0
@@ -1583,7 +1597,6 @@ GameObject:
   - component: {fileID: 639749953}
   - component: {fileID: 639749952}
   - component: {fileID: 639749955}
-  - component: {fileID: 639749956}
   m_Layer: 8
   m_Name: KeyTest
   m_TagString: Key
@@ -1693,19 +1706,6 @@ MonoBehaviour:
   player: {fileID: 187642262}
   keyName: TestKey
   dropWeapon: {fileID: 0}
---- !u!114 &639749956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 639749950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1734e80764f907c43bc2e4303414d69e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 604849305}
 --- !u!1 &650856965
 GameObject:
   m_ObjectHideFlags: 0
@@ -3609,6 +3609,7 @@ GameObject:
   - component: {fileID: 1394559228}
   - component: {fileID: 1394559227}
   - component: {fileID: 1394559226}
+  - component: {fileID: 1394559229}
   m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
@@ -3699,6 +3700,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1394559229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394559224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1734e80764f907c43bc2e4303414d69e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 604849305}
 --- !u!1 &1440898853
 GameObject:
   m_ObjectHideFlags: 0
@@ -4318,7 +4332,6 @@ GameObject:
   - component: {fileID: 1731372534}
   - component: {fileID: 1731372533}
   - component: {fileID: 1731372536}
-  - component: {fileID: 1731372537}
   m_Layer: 8
   m_Name: WeaponTest
   m_TagString: DropWeapon
@@ -4428,19 +4441,6 @@ MonoBehaviour:
   player: {fileID: 187642262}
   keyName: 
   dropWeapon: {fileID: 11400000, guid: 883bff13053de604181a6e9ffd0e1f47, type: 2}
---- !u!114 &1731372537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1731372531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1734e80764f907c43bc2e4303414d69e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 604849305}
 --- !u!1 &1903587136
 GameObject:
   m_ObjectHideFlags: 0
