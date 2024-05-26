@@ -14,8 +14,6 @@ public class DoorVerification : MonoBehaviour
         {
             //Activar booleano al entrar al box collider
             door.inRange = true;
-
-            Debug.Log("Enter");
         }
     }
 
@@ -26,8 +24,6 @@ public class DoorVerification : MonoBehaviour
         {
             //Activar booleano al entrar al box collider
             door.inRange = false;
-
-            Debug.Log("Exit");
         }
     }
 }
