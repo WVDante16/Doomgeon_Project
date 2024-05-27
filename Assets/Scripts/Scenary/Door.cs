@@ -6,32 +6,46 @@ public class Door : MonoBehaviour
 {
     //Variables publicas
     public bool isOpen = false;
+    public bool inRange = false;
+
+    [Header("Locked Door Options")]
+    public bool isLocked = false;
+    public string keyName;
 
     //Variables privadas
     private float speed = 1f;
     [SerializeField] private Vector3 slideDirection = Vector3.back;
     private float slideAmount = 1.9f;
     private Vector3 startPosition;
-    private Vector3 forward;
     private Coroutine AnimationCoroutine;
+    private KeyItems_Inventory keyInventory;
 
     private void Awake()
     {
         //Setear posiciones iniciales y definir frente de la puerta
-        forward = transform.right;
         startPosition = transform.position;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O)) 
+        //Comprobar si el jugaor esta en rango e interactua
+        if (inRange && Input.GetKeyDown(KeyCode.E))
         {
-            Open();
-        }
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            Close();
+            //Comprobar si es una puerta bloqueada
+            if (isLocked)
+            {
+                keyInventory = FindObjectOfType<KeyItems_Inventory>();
+                
+                if (keyInventory.InInventory(keyName))
+                {
+                    Interact();
+                }
+                
+            }
+            else
+            {
+                Interact();
+            }  
         }
     }
 
@@ -60,6 +74,19 @@ public class Door : MonoBehaviour
             }
 
             AnimationCoroutine = StartCoroutine(DoSlidingClose());
+        }
+    }
+
+    //Funcion que gestiona si abre o cierra la puerta
+    private void Interact()
+    {
+        if (!isOpen)
+        {
+            Open();
+        }
+        else
+        {
+            Close();
         }
     }
 
