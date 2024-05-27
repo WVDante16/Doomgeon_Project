@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class KeyItem : MonoBehaviour
@@ -17,11 +15,9 @@ public class KeyItem : MonoBehaviour
         //Comprobar que es el jugador
         if (other.tag == "Player")
         {
-            Debug.Log("PlayerContact");
-
-            //Añadir la key al inventario y destruirla
+            //Añadir la key al inventario y desactivarla
             keyItemsInventory.AddItem(this.gameObject);
-            //Destroy(this);
+            gameObject.SetActive(false);
         }
     }
 }

@@ -8,12 +8,17 @@ public class Door : MonoBehaviour
     public bool isOpen = false;
     public bool inRange = false;
 
+    [Header("Locked Door Options")]
+    public bool isLocked = false;
+    public string keyName;
+
     //Variables privadas
     private float speed = 1f;
     [SerializeField] private Vector3 slideDirection = Vector3.back;
     private float slideAmount = 1.9f;
     private Vector3 startPosition;
     private Coroutine AnimationCoroutine;
+    private KeyItems_Inventory keyInventory;
 
     private void Awake()
     {
@@ -26,7 +31,21 @@ public class Door : MonoBehaviour
         //Comprobar si el jugaor esta en rango e interactua
         if (inRange && Input.GetKeyDown(KeyCode.E))
         {
-            Interact();
+            //Comprobar si es una puerta bloqueada
+            if (isLocked)
+            {
+                keyInventory = FindObjectOfType<KeyItems_Inventory>();
+                
+                if (keyInventory.InInventory(keyName))
+                {
+                    Interact();
+                }
+                
+            }
+            else
+            {
+                Interact();
+            }  
         }
     }
 
