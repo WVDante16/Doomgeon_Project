@@ -10,5 +10,7 @@ public class Bullet : MonoBehaviour
             print("Hit " + collision.gameObject.name);
             Destroy(gameObject);
         }
+
+        Destroy(gameObject);
     }
 }
